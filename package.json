@@ -1,0 +1,39 @@
+{
+  "name": "soccer",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap \"test/**/*.test.js\"",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^5.0.0",
+    "@fastify/compress": "^6.2.0",
+    "@fastify/cors": "^8.2.0",
+    "@fastify/helmet": "^10.1.0",
+    "@fastify/multipart": "^7.4.0",
+    "@fastify/sensible": "^4.1.0",
+    "@fastify/static": "^6.6.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.0.0",
+    "fastify-cli": "^4.4.0",
+    "fastify-disablecache": "^3.1.2",
+    "fastify-http2https": "^0.0.3",
+    "fastify-https-always": "^1.0.0",
+    "fastify-https-redirect": "^1.0.4",
+    "fastify-plugin": "^3.0.0",
+    "fastify-tls-keygen": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "devDependencies": {
+    "tap": "^16.1.0"
+  }
+}

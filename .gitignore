@@ -1,0 +1,8 @@
+node_modules
+.env
+public/videos
+public/photos
+public/play
+ca_bundle.crt
+certificate.crt
+private.key

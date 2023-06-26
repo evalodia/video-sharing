@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RexVTU | Video</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/photos/RexVTU.png">
+    <style>
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      
+    }
+        /* Existing Video Player Styles */
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Additional Styles for Mobile */
+        @media (min-width: 601px) {
+            video {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="ezoic-pub-ad-placeholder-188"> </div>
+  <video controls>
+    Your browser does not support the video tag.
+</video>
+
+
+
+<script>
+    // Retrieve the name from the URL
+    let name = window.location.href.split("/")[4];
+
+    // Update the video source with the retrieved name
+    var videoElement = document.querySelector("video");
+    
+    if (videoElement) {
+        var sourceElement = document.createElement("source");
+        sourceElement.src = "/videos/" + name + ".mp4";
+        sourceElement.type = "video/mp4";
+
+        // Append the new source element to the video element
+        videoElement.appendChild(sourceElement);
+
+        // Load the new video source
+        videoElement.load();
+
+    }
+</script>
+
+
+<div id="ezoic-pub-ad-placeholder-189"> </div>
+
+</body>
+</html>

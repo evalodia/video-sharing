@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RexVTU | Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/photos/RexVTU.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .header .brand {
+      color: #A52A2A; /* Brown color */
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .header .brand a {
+      text-decoration: none;
+      color: #A52A2A; /* Brown color */
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(78, 75, 75);
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+      font-weight: bold;
+    }
+
+   
+  </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand"><a href="/">RexVTU</a></div>
+      </div>
+  <div class="container">
+    <h2>Enter your email address and you will receive an invite from us within 48 hours</h2>
+    <form id="emailForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="johndoe@yahoo.com" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+    <p id="message" class="message"></p>
+
+    
+    <script>
+      document.getElementById("emailForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var messageElement = document.getElementById("message");
+        messageElement.textContent = "We will get back to you shortly";
+
+        setTimeout(function() {
+          window.location.href = "/";
+        }, 3000); 
+      });
+    </script>
+  </div>
+  
+</body>
+</html>

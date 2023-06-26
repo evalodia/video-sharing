@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/photos/RexVTU.png">
+  <title>RexVTU | Refresh</title>
+<style>
+body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      
+    }
+       
+    </style>
+</head>
+<body>
+  <script>
+    let videoTitle = window.location.href.split("/")[4];
+    const url = new URL(window.location.href);
+const baseURL = url.origin;
+    
+    fetch(`/singlevideo/${videoTitle}`)
+      .then((response) => response.json())
+      .then((video) => {
+       let redirectURL = `${baseURL}/v/${videoTitle.split(/\?/)[0].toString()}`;
+        window.location.href = redirectURL;
+      })
+      .catch((error) => {
+        let videoContainer = document.createElement("div");
+        videoContainer.id = "video-container";
+        document.body.appendChild(videoContainer);
+
+        let processingMessage = document.createElement("p");
+        processingMessage.innerHTML = "<center><h1 style='font-size: 60px;'> Video is processing.. </h1> <p><h3 style='font-size: 45px;'>We'll refresh the page when it's ready.</h3></p></center>";
+        processingMessage.className = "processing-message";
+        videoContainer.appendChild(processingMessage);
+
+        let secondsCounter = 0;
+        let queryParams = new URLSearchParams(window.location.search);
+        let secondsParam = queryParams.get('seconds');
+
+        if (secondsParam) {
+          secondsCounter = parseInt(secondsParam);
+        }
+        let refreshInterval = setInterval(() => {
+          secondsCounter++;
+          if (secondsCounter >= 10) {
+            clearInterval(refreshInterval);
+            let errorMessage = document.createElement("p");
+            errorMessage.innerHTML =  "<center><h1 style='font-size: 60px;'> Error:</h1> <p><h2 style='font-size: 55px;'>  Video not found. </h3></p></center>";
+            errorMessage.className = "error-message";
+            videoContainer.replaceChild(errorMessage, processingMessage);
+          } else {
+            let videoTitle = window.location.href.split("/")[4];
+    if (videoTitle.match(/\?/)){
+      let current_url = `${baseURL}/refresh/${videoTitle.split(/\?/)[0].toString()}`
+      location.href = current_url + `?seconds=${secondsCounter}`;
+    } else {
+      let current_url = `${baseURL}/refresh/${videoTitle}`
+      location.href = current_url + `?seconds=${secondsCounter}`;
+    }
+          }
+        }, 6000);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RexVTU | Video Share</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/photos/RexVTU.png">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBBPQEP52X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GBBPQEP52X');
+</script>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .header .brand {
+      color: #A52A2A; /* Brown color */
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .header .brand a {
+      text-decoration: none;
+      color: #A52A2A; /* Brown color */
+    }
+
+    .header .apply-link {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      background-color: #fff;
+      transition: color 0.3s;
+    }
+
+    .header .apply-link:hover {
+      color: #0056b3;
+      background-color: #e6e6e6;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .upload-btn,
+    .copy-link-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #signin-text {
+      color: #fff;
+      background-color: #4CAF50;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand"><a href="/">RexVTU</a></div>
+    <a class="apply-link" href="/apply">Apply Now</a>
+  </div>
+
+  <div class="card">
+    <h2>Video Sharing</h2>
+    <p>upload and share short videos</p>
+    <p id="signin-text" class="hidden">Sign in to start sharing videos</p>
+    <button class="upload-btn" onclick="toggleSignInText()">Upload Video</button>
+    <button class="copy-link-btn" onclick="toggleSignInText()">Copy Link</button>
+  </div>
+
+  <div class="footer">
+    <a href="/about">About</a>
+    <a href="/terms">Terms of Use</a>
+  </div>
+  
+
+  <script>
+    function toggleSignInText() {
+      var signInText = document.getElementById("signin-text");
+      signInText.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
